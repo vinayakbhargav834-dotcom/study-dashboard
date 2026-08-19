@@ -57,6 +57,5 @@ const progrssBar =
 document.getElementById("progress");
 
 function updateProgrees(percent) {
-    prograssBar.style.wdite = percent +
-    "%";
+    prograssBar.style.wdite = percent + "%";
 }
