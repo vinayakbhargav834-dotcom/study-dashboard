@@ -58,3 +58,11 @@ const progressBar = document.getElementById("progress");
 function updateProgress(percent) {
     progressBar.style.width = percent + "%";
 }
+function resetProgress() {
+    completed = 0;
+
+    document.getElementById("progress").style.width = "0%";
+    document.getElementById("progressText").textContent = "0% completed";
+    document.getElementById("message").textContent =
+        "Choose a subject to start studying.";
+}
