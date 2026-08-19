@@ -1,23 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Study Dashboard</title>
 </head>
+
 <body>
 
-    <h1>📚 My Study Dashboard</h1>
-    <p>Welcome! Let's study smarter.</p>
+    <div class="container">
 
-    <h2>My Subjects</h2>
+        <h1>📚 My Study Dashboard</h1>
+        <p>Plan your study. Track your progress. Keep improving.</p>
 
-    <ul>
-        <li>Physics</li>
-        <li>Chemistry</li>
-        <li>Biology</li>
-    </ul>
-<script src="script.js"></script>
+        <section class="card">
+            <h2>📖 My Subjects</h2>
+
+            <div class="subjects">
+                <button onclick="completeSubject('Physics')">⚡ Physics</button>
+                <button onclick="completeSubject('Chemistry')">🧪 Chemistry</button>
+                <button onclick="completeSubject('Biology')">🧬 Biology</button>
+            </div>
+
+            <p id="message">Choose a subject to start studying.</p>
+        </section>
+
+        <section class="card">
+            <h2>📊 Today's Progress</h2>
+
+            <div class="progress-bar">
+                <div id="progress"></div>
+            </div>
+
+            <p id="progressText">0% completed</p>
+        </section>
+
+        <section class="card">
+            <h2>⏱️ Study Timer</h2>
+
+            <div id="timer">25:00</div>
+
+            <button onclick="startTimer()">Start</button>
+            <button onclick="resetTimer()">Reset</button>
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+
 </body>
 </html>
