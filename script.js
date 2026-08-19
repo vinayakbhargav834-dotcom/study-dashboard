@@ -53,3 +53,10 @@ function resetTimer() {
 
     document.getElementById("timer").textContent = "25:00";
 }
+const progrssBar =
+document.getElementById("progress");
+
+function updateProgrees(percent) {
+    prograssBar.style.wdite = percent +
+    "%";
+}
