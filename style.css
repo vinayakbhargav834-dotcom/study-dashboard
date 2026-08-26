@@ -1,0 +1,719 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: white;
+    min-height: 100vh;
+
+    background:
+        radial-gradient(circle at 10% 10%, rgba(37, 99, 235, 0.20), transparent 30%),
+        radial-gradient(circle at 90% 20%, rgba(139, 92, 246, 0.18), transparent 30%),
+        linear-gradient(135deg, #020617, #0f172a, #111827);
+
+    background-size: 300% 300%;
+    animation: backgroundMove 12s ease infinite;
+}
+
+.container {
+    width: 92%;
+    max-width: 1100px;
+    margin: auto;
+    padding: 45px 0;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+h1 {
+    text-align: center;
+    font-size: 42px;
+    margin: 0 0 10px;
+
+    background: linear-gradient(
+        90deg,
+        #60a5fa,
+        #a78bfa,
+        #34d399
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    animation: fadeDown 0.8s ease;
+}
+
+.subtitle {
+    text-align: center;
+    color: #94a3b8;
+    margin-bottom: 38px;
+    animation: fadeUp 1s ease;
+}
+
+
+/* =========================
+   STATS
+========================= */
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-bottom: 25px;
+}
+
+.stat-card {
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    padding: 22px;
+
+    border-radius: 18px;
+
+    background: rgba(15, 23, 42, 0.82);
+
+    border: 1px solid rgba(148, 163, 184, 0.12);
+
+    backdrop-filter: blur(14px);
+
+    transition: 0.3s ease;
+    animation: cardAppear 0.8s ease;
+}
+
+.stat-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 100px;
+    height: 100px;
+
+    right: -40px;
+    top: -40px;
+
+    border-radius: 50%;
+
+    background: rgba(59, 130, 246, 0.12);
+}
+
+.stat-card:hover {
+    transform: translateY(-7px) scale(1.02);
+
+    border-color: rgba(96, 165, 250, 0.35);
+
+    box-shadow:
+        0 12px 35px rgba(0, 0, 0, 0.35),
+        0 0 20px rgba(37, 99, 235, 0.12);
+}
+
+.stat-icon {
+    font-size: 32px;
+}
+
+.stat-card h3 {
+    margin: 0;
+    font-size: 27px;
+}
+
+.stat-card p {
+    margin: 5px 0 0;
+    color: #94a3b8;
+}
+
+
+/* =========================
+   MAIN CARDS
+========================= */
+
+.card {
+    position: relative;
+
+    padding: 28px;
+
+    margin-bottom: 25px;
+
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(15, 23, 42, 0.94),
+            rgba(2, 6, 23, 0.90)
+        );
+
+    border: 1px solid rgba(148, 163, 184, 0.12);
+
+    backdrop-filter: blur(15px);
+
+    box-shadow:
+        0 12px 35px rgba(0, 0, 0, 0.22);
+
+    animation: cardAppear 0.8s ease;
+
+    transition: 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+
+    border-color: rgba(96, 165, 250, 0.25);
+
+    box-shadow:
+        0 18px 40px rgba(0, 0, 0, 0.3);
+}
+
+.card h2 {
+    margin-top: 0;
+    margin-bottom: 22px;
+    font-size: 24px;
+}
+
+
+/* =========================
+   SUBJECTS
+========================= */
+
+.subjects {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 15px;
+
+    margin: 20px 0;
+}
+
+.subjects button {
+    min-height: 70px;
+
+    padding: 15px;
+
+    border-radius: 15px;
+
+    border: 1px solid rgba(96, 165, 250, 0.25);
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #0891b2
+        );
+
+    color: white;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+.subjects button:hover {
+    transform: translateY(-5px) scale(1.03);
+
+    box-shadow:
+        0 10px 28px rgba(37, 99, 235, 0.35),
+        0 0 20px rgba(37, 99, 235, 0.4);
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+button {
+    position: relative;
+
+    padding: 11px 17px;
+
+    border: none;
+
+    border-radius: 11px;
+
+    background: #2563eb;
+
+    color: white;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    overflow: hidden;
+
+    transition: 0.25s ease;
+}
+
+button:hover {
+    transform: translateY(-3px) scale(1.03);
+
+    box-shadow:
+        0 0 18px rgba(37, 99, 235, 0.65);
+}
+
+button:active {
+    transform: scale(0.94);
+}
+
+
+/* =========================
+   SUBJECT EDITOR
+========================= */
+
+#subjectEditor {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    margin-top: 15px;
+
+    padding: 15px;
+
+    border-radius: 14px;
+
+    background: rgba(0, 0, 0, 0.20);
+}
+
+#subjectEditor input {
+    flex: 1;
+    min-width: 180px;
+}
+
+
+/* =========================
+   MESSAGE
+========================= */
+
+#message {
+    color: #94a3b8;
+    margin-top: 20px;
+}
+
+
+/* =========================
+   INPUTS
+========================= */
+
+input {
+    padding: 13px 14px;
+
+    border-radius: 11px;
+
+    border: 1px solid rgba(148, 163, 184, 0.18);
+
+    background: rgba(15, 23, 42, 0.85);
+
+    color: white;
+
+    outline: none;
+
+    transition: 0.25s ease;
+}
+
+input::placeholder {
+    color: #64748b;
+}
+
+input:focus {
+    border-color: #60a5fa;
+
+    box-shadow:
+        0 0 0 3px rgba(96, 165, 250, 0.10),
+        0 0 18px rgba(96, 165, 250, 0.20);
+}
+
+
+/* =========================
+   PROGRESS
+========================= */
+
+.progress-bar {
+    width: 100%;
+
+    height: 16px;
+
+    margin: 18px 0 10px;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+#progress {
+    width: 0%;
+
+    height: 100%;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #2563eb,
+            #60a5fa,
+            #a78bfa
+        );
+
+    box-shadow:
+        0 0 15px rgba(96, 165, 250, 0.55);
+
+    transition: width 0.7s ease;
+}
+
+#progressText {
+    font-weight: bold;
+    color: #e2e8f0;
+}
+
+#studyGoal {
+    color: #94a3b8;
+}
+
+
+/* =========================
+   TODO
+========================= */
+
+.todo-input {
+    display: flex;
+    gap: 10px;
+}
+
+.todo-input input {
+    flex: 1;
+}
+
+#todoList {
+    padding-left: 0;
+    margin-top: 20px;
+}
+
+#todoList li {
+    list-style: none;
+
+    padding: 14px 16px;
+
+    margin: 10px 0;
+
+    border-radius: 12px;
+
+    background: rgba(0, 0, 0, 0.25);
+
+    border: 1px solid rgba(255, 255, 255, 0.06);
+
+    animation: slideIn 0.4s ease;
+
+    transition: 0.3s ease;
+}
+
+#todoList li:hover {
+    transform: translateX(5px);
+
+    background: rgba(255, 255, 255, 0.07);
+}
+
+
+/* =========================
+   TIMER
+========================= */
+
+#timer {
+    text-align: center;
+
+    font-size: 70px;
+
+    font-weight: bold;
+
+    margin: 30px 0;
+
+    color: #60a5fa;
+
+    text-shadow:
+        0 0 20px rgba(96, 165, 250, 0.35);
+
+    animation: pulse 2s infinite;
+}
+
+.timer-buttons {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+}
+
+
+/* =========================
+   EXAM COUNTDOWN
+========================= */
+
+.exam-form {
+    display: flex;
+
+    gap: 10px;
+
+    margin: 15px 0 20px;
+
+    flex-wrap: wrap;
+}
+
+.exam-form input {
+    flex: 1;
+    min-width: 150px;
+}
+
+
+/* KEEP YOUR ADD EXAM SHINE */
+
+#addExamButton {
+    background: #2563eb;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+#addExamButton::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -100%;
+
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.35),
+        transparent
+    );
+
+    transition: 0.5s;
+}
+
+#addExamButton:hover::before {
+    left: 100%;
+}
+
+
+.exam-item {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 17px;
+
+    margin-bottom: 12px;
+
+    border-radius: 14px;
+
+    background: rgba(0, 0, 0, 0.28);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    animation: examAppear 0.5s ease;
+
+    transition: 0.3s ease;
+}
+
+.exam-item:hover {
+    transform: translateX(5px);
+
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.exam-item p {
+    margin: 6px 0;
+
+    color: #cbd5e1;
+}
+
+.exam-item span {
+    font-weight: bold;
+
+    color: #60a5fa;
+}
+
+.exam-item button {
+    background: #dc2626;
+}
+
+.exam-item button:hover {
+    box-shadow:
+        0 0 15px rgba(220, 38, 38, 0.7);
+}
+
+
+/* =========================
+   ORIGINAL ANIMATIONS
+========================= */
+
+@keyframes backgroundMove {
+
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes fadeDown {
+
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes cardAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes examAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes pulse {
+
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.03);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    .container {
+        width: 94%;
+        padding: 25px 0;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .subjects {
+        grid-template-columns: 1fr;
+    }
+
+    .todo-input {
+        flex-direction: column;
+    }
+
+    .todo-input input,
+    .todo-input button {
+        width: 100%;
+    }
+
+    .timer-buttons {
+        flex-wrap: wrap;
+    }
+
+    #timer {
+        font-size: 52px;
+    }
+
+    .exam-form {
+        flex-direction: column;
+    }
+
+    .exam-form input,
+    .exam-form button {
+        width: 100%;
+    }
+
+    .exam-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
