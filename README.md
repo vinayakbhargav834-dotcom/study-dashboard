@@ -1,43 +1,11 @@
-Study Dashboard
+This study dashboard was developed to consolidate subjects, tasks, study duration, and upcoming examination dates into a unified interface. The motivation for its creation stemmed from the observed inefficiency of managing these distinct aspects of studying across multiple platforms. The dashboard aims to centralize these functionalities for a more streamlined experience.
 
-A simple and interactive web-based Study Dashboard designed to help students organize their studies, track progress, and manage daily tasks.
+Key features include the ability to add, edit, and delete academic subjects, alongside functionality to track completed subjects and overall progress. Users can also add and manage study-related tasks, utilize a 25-minute study timer, and input upcoming exam dates with a corresponding countdown display. Data persistence is handled via localStorage, and the user interface incorporates animations and responsiveness for smaller screen devices.
 
-Features
-📚 Editable Subjects — Add, edit, and delete subjects.
-📊 Progress Tracking — Track completed subjects and overall progress.
-✅ To-Do List — Add tasks and mark them as completed or delete them.
-⏱️ Pomodoro Timer — Use a 25-minute study timer to stay focused.
-📈 Statistics Cards — Quickly view your study progress and completed tasks.
-💾 Local Storage — Important data is saved in the browser.
-🎨 Clean UI — Simple and student-friendly interface.
+The design prioritizes convenience by integrating subjects, tasks, the timer, progress tracking, and exam information within a single dashboard. Progress tracking is automated; the dashboard updates completion status upon subject finalization, reducing manual calculation. Furthermore, the integrated To-Do List and Exam Countdown are intended to mitigate the risk of forgetting essential tasks and deadlines.
 
-Technologies Used ;
-HTML
-CSS
-JavaScript
-Local Storage
-How to Use
-Open the Study Dashboard.
-Add or edit your subjects.
-Track your subject progress.
-Add your daily tasks to the To-Do List.
-Use the Pomodoro Timer for focused study sessions.
-Check your statistics to see your progress.
-Project Goal
+The project was built using HTML, CSS, JavaScript, and leverages LocalStorage for data management. During development, the creator gained practical experience in JavaScript DOM manipulation, localStorage API implementation, CSS animations, responsive design techniques, and the integration of disparate features.
 
-The goal of this project is to create a simple study companion that combines subject tracking, task management, progress monitoring, and a study timer in one dashboard.
+Potential future enhancements include the implementation of a study streak tracker, daily study time statistics, additional visual themes, more comprehensive statistical reporting, and study reminders.
 
-Future Improvements ;
-Dark mode
-More detailed study statistics
-Study history
-Customizable timer
-Notifications and reminders
-
-AI Usage ;
-
-AI tools, including ChatGPT, were used to assist debugging, explaining, and improving parts of the HTML, CSS, and JavaScript code. The project was reviewed, tested, and customized during development.
-
-Author
-Vinayak Bhargav
-Built as a learning project to practice HTML, CSS, and JavaScript.
+This project was undertaken as part of the Frictionless project initiative, with the primary objective of simplifying and improving the efficiency of daily study organization. The core technologies utilized are HTML, CSS, and JavaScript.
