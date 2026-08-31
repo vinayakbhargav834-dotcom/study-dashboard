@@ -1,1 +1,59 @@
+/* Exam Countdown */
 
+.exam-form {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 18px;
+    flex-wrap: wrap;
+}
+
+.exam-form input {
+    flex: 1;
+    min-width: 150px;
+}
+
+.exam-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 14px;
+    margin-bottom: 10px;
+    background: #f7f7f7;
+    border: 1px solid #ddd;
+    border-radius: 7px;
+}
+
+.exam-item p {
+    margin: 5px 0;
+    color: #666;
+}
+
+.exam-item span {
+    font-weight: bold;
+    color: #1f5fbf;
+}
+
+.exam-item button {
+    background: #d9534f;
+}
+
+.exam-item button:hover {
+    background: #c9302c;
+}
+
+@media (max-width: 700px) {
+    .exam-form {
+        flex-direction: column;
+    }
+
+    .exam-form input,
+    .exam-form button {
+        width: 100%;
+    }
+
+    .exam-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
