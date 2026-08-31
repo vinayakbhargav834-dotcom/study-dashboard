@@ -1,1 +1,22 @@
+/* Study Timer */
 
+#timer {
+    text-align: center;
+    font-size: 60px;
+    font-weight: bold;
+    color: #1f3c88;
+    margin: 25px 0;
+}
+
+.timer-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 700px) {
+    #timer {
+        font-size: 48px;
+    }
+}
