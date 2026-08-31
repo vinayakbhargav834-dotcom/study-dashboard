@@ -1,1 +1,137 @@
+* {
+    box-sizing: border-box;
+}
 
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f2f4f7;
+    color: #222;
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    padding: 35px 0;
+}
+
+/* Header */
+
+h1 {
+    text-align: center;
+    margin-bottom: 8px;
+    font-size: 36px;
+    color: #1f3c88;
+}
+
+.subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+/* Statistics */
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.stat-card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.stat-icon {
+    font-size: 28px;
+}
+
+.stat-card h3 {
+    margin: 0;
+    font-size: 24px;
+    color: #1f3c88;
+}
+
+.stat-card p {
+    margin: 4px 0 0;
+    color: #777;
+}
+
+/* Main cards */
+
+.card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 22px;
+    margin-bottom: 20px;
+}
+
+.card h2 {
+    margin-top: 0;
+    margin-bottom: 18px;
+    font-size: 22px;
+    color: #333;
+}
+
+/* General buttons */
+
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 6px;
+    background: #1f5fbf;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #174b99;
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+/* Inputs */
+
+input {
+    padding: 11px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background: white;
+    color: #222;
+    outline: none;
+}
+
+input:focus {
+    border-color: #1f5fbf;
+}
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+    .container {
+        width: 94%;
+        padding: 25px 0;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+}
