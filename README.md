@@ -10,4 +10,3 @@ Potential future enhancements include the implementation of a study streak track
 
 This project was undertaken as part of the Frictionless project initiative, with the primary objective of simplifying and improving the efficiency of daily study organization. The core technologies utilized are HTML, CSS, and JavaScript.
 
-i use ai also for codeing
