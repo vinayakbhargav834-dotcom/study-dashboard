@@ -1,1 +1,52 @@
+/* To-Do List */
 
+.todo-input {
+    display: flex;
+    gap: 8px;
+}
+
+.todo-input input {
+    flex: 1;
+}
+
+#todoList {
+    padding: 0;
+    margin-top: 15px;
+}
+
+#todoList li {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 11px 12px;
+    margin-bottom: 8px;
+    background: #f7f7f7;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+
+#todoList li span {
+    cursor: pointer;
+}
+
+#todoList li.completed span {
+    text-decoration: line-through;
+    color: #888;
+}
+
+#todoList li button {
+    background: #d9534f;
+    padding: 6px 9px;
+}
+
+@media (max-width: 700px) {
+    .todo-input {
+        flex-direction: column;
+    }
+
+    .todo-input input,
+    .todo-input button {
+        width: 100%;
+    }
+}
