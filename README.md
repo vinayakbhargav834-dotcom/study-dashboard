@@ -1,45 +1,27 @@
 # 📚 Study Dashboard
+This HTML/CSS/JS dashboard tracks study sessions ,exam, and task without complex backend.Just open in your browser and get started....
 
-A simple exam board I made to help students prepare for their studies, progress in study, manage assignments and topics for upcoming exams.
 
-## ✨ Features
 
-- 📖 Add and manage topics/Subjects
-- 📊 Track every day and watch the culture
-- 📝 Create and manage To-Do lists
-- ⏱️ 25 minutes exam time
-- 📅 Add the test and watch the countdown
-- 📈 Simple look Look at the plates
-- 💾 Stores important information inside the browser
-- 📱 Responsible layout for special screen sizes
+ CORE FEATURE;
+  1.Study Timer; A build in tracker for study sessions by (timer.js) and (timer.css)..
+  2.task management; a straight forward daliy to do list handled by (todo.js) and (todo.css)..
+  3.subject Exam recoder; keepctrack of your exams upcoming dates handled by (subjects) and (exam)modules part
+  4.Analytics; a basic stats overview to visualize study progress handled by (stats.js)...
 
-## 🛠️ Technology used
 
-- HTML
-- CSS
-- JavaScript
-- Local Storage
+  
+FILE STRUCTURE BREKDOWN;
 
-## 📁 Project Structure
+index.html: ui layout.
+css/: style for timer,todo,subjects, and exams, together by main.css.
+js/; javascript logic.
+   -app.js; the main entry point.
+   -data.js; handles the mock data or browers local storage state.
+   -stats.js, timer.js, todo.js,exam,js, subject.js - for each dashboard widget...
 
-```text
-study-dashboard/
-│
-├── index.html
-├── README.md
-│
-├── css/
-│   ├── main.css
-│   ├── subjects.css
-│   ├── todo.css
-│   ├── timer.css
-│   └── exams.css
-│
-└── js/
-    ├── data.js
-    ├── subjects.js
-    ├── timer.js
-    ├── todos.js
-    ├── exam.js
-    ├── stats.js
-    └── app.js
+
+  " THAT  ALL THANK U FOR READ THIS "
+  AND PLEASE APPROVE THIS PROJECT ASAP..
+  AND SOORY FOR BAD ENGLISH
+
