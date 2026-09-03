@@ -1,87 +1,64 @@
-function saveTodos() {
-    localStorage.setItem(
-        "todos",
-        JSON.stringify(todos)
-    );
+function showTodos() {
+    const list = document.getElementById("todoList");
+
+    list.innerHTML = "";
+
+    todos.forEach(function(todo, index) {
+        const item = document.createElement("li");
+
+        item.innerHTML = `
+            <span class="${todo.completed ? "completed" : ""}">
+                ${todo.text}
+            </span>
+
+            <button onclick="completeTodo(${index})">
+                ${todo.completed ? "↩️ Undo" : "✅ Done"}
+            </button>
+
+            <button onclick="deleteTodo(${index})">
+                🗑️ Delete
+            </button>
+        `;
+
+        list.appendChild(item);
+    });
+
+    updateStats();
 }
 
+
 function addTodo() {
-    const input =
-        document.getElementById("todoInput");
+    const input = document.getElementById("todoInput");
+    const task = input.value.trim();
 
-    const text = input.value.trim();
-
-    if (text === "") {
+    if (task === "") {
+        alert("Please enter a task.");
         return;
     }
 
     todos.push({
-        text: text,
+        text: task,
         completed: false
     });
 
     input.value = "";
 
-    saveTodos();
-    renderTodos();
-    updateStats();
+    saveData();
+    showTodos();
 }
 
-function toggleTodo(index) {
-    todos[index].completed =
-        !todos[index].completed;
 
-    saveTodos();
-    renderTodos();
-    updateStats();
+function completeTodo(index) {
+    todos[index].completed = !todos[index].completed;
+
+    saveData();
+    showTodos();
 }
+
 
 function deleteTodo(index) {
     todos.splice(index, 1);
 
-    saveTodos();
-    renderTodos();
-    updateStats();
-}
-
-function renderTodos() {
-    const container =
-        document.getElementById("todoList");
-
-    if (!container) {
-        return;
-    }
-
-    container.innerHTML = "";
-
-    todos.forEach(function(todo, index) {
-        const item =
-            document.createElement("div");
-
-        item.className = "todo-item";
-
-        item.innerHTML = `
-            <span class="${
-                todo.completed
-                    ? "completed"
-                    : ""
-            }">
-                ${todo.text}
-            </span>
-
-            <button onclick="toggleTodo(${index})">
-                ${
-                    todo.completed
-                        ? "Undo"
-                        : "Done"
-                }
-            </button>
-
-            <button onclick="deleteTodo(${index})">
-                Delete
-            </button>
-        `;
-
-        container.appendChild(item);
-    });
+    saveData();
+    showTodos();
 }
