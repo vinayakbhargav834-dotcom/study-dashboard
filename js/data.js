@@ -2,25 +2,47 @@
 let subjects = JSON.parse(
     localStorage.getItem("subjects")
 ) || [
-    "Physics",
-    "Chemistry",
-    "Biology"
+    {
+        name: "Physics",
+        completed: false
+    },
+    {
+        name: "Chemistry",
+        completed: false
+    },
+    {
+        name: "Biology",
+        completed: false
+    }
 ];
 
-let completedSubjects = JSON.parse(
-    localStorage.getItem("completedSubjects")
-) || [];
-
-// TIMER
-let timeLeft = 25 * 60;
-let timerInterval = null;
 
 // TO-DO
 let todos = JSON.parse(
     localStorage.getItem("todos")
 ) || [];
 
+
 // EXAMS
 let exams = JSON.parse(
     localStorage.getItem("exams")
 ) || [];
+
+
+// SAVE DATA
+function saveData() {
+    localStorage.setItem(
+        "subjects",
+        JSON.stringify(subjects)
+    );
+
+    localStorage.setItem(
+        "todos",
+        JSON.stringify(todos)
+    );
+
+    localStorage.setItem(
+        "exams",
+        JSON.stringify(exams)
+    );
+}
