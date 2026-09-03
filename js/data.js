@@ -17,6 +17,19 @@ let subjects = JSON.parse(
 ];
 
 
+// Fix old saved subjects
+subjects = subjects.map(function(subject) {
+    if (typeof subject === "string") {
+        return {
+            name: subject,
+            completed: false
+        };
+    }
+
+    return subject;
+});
+
+
 // TO-DO
 let todos = JSON.parse(
     localStorage.getItem("todos")
