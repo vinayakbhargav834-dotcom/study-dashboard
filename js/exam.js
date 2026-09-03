@@ -1,27 +1,9 @@
-function saveExams() {
-    localStorage.setItem(
-        "exams",
-        JSON.stringify(exams)
-    );
-}
-
 function addExam() {
-    const nameInput =
-        document.getElementById("examName");
-
-    const dateInput =
-        document.getElementById("examDate");
-
-    const name =
-        nameInput.value.trim();
-
-    const date =
-        dateInput.value;
+    const name = document.getElementById("examName").value.trim();
+    const date = document.getElementById("examDate").value;
 
     if (name === "" || date === "") {
-        alert(
-            "Please enter exam name and date."
-        );
+        alert("Please enter the exam name and date.");
         return;
     }
 
@@ -30,56 +12,47 @@ function addExam() {
         date: date
     });
 
-    saveExams();
+    saveData();
 
-    nameInput.value = "";
-    dateInput.value = "";
+    document.getElementById("examName").value = "";
+    document.getElementById("examDate").value = "";
 
-    renderExams();
+    showExams();
     updateStats();
 }
 
-function deleteExam(index) {
-    exams.splice(index, 1);
 
-    saveExams();
+function showExams() {
+    const examList = document.getElementById("examList");
 
-    renderExams();
-    updateStats();
-}
-
-function renderExams() {
-    const container =
-        document.getElementById(
-            "examList"
-        );
-
-    if (!container) {
-        return;
-    }
-
-    container.innerHTML = "";
+    examList.innerHTML = "";
 
     exams.forEach(function(exam, index) {
-        const item =
-            document.createElement("div");
+        const examBox = document.createElement("div");
 
-        item.className = "exam-item";
+        examBox.className = "exam-item";
 
-        item.innerHTML = `
-            <h3>${exam.name}</h3>
+        examBox.innerHTML = `
+            <div>
+                <strong>${exam.name}</strong>
+                <p>${exam.date}</p>
+            </div>
 
-            <p>
-                Exam Date: ${exam.date}
-            </p>
-
-            <button
-                onclick="deleteExam(${index})"
-            >
+            <button onclick="deleteExam(${index})">
                 Delete
             </button>
         `;
 
-        container.appendChild(item);
+        examList.appendChild(examBox);
     });
+}
+
+
+function deleteExam(index) {
+    exams.splice(index, 1);
+
+    saveData();
+
+    showExams();
+    updateStats();
 }
