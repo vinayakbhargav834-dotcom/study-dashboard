@@ -1,42 +1,54 @@
-function updateTimer() {
+let timeLeft = 25 * 60;
+let timerRunning = false;
+let timerInterval;
+
+
+function showTimer() {
+    const timer = document.getElementById("timer");
+
     const minutes = Math.floor(timeLeft / 60);
     const seconds = timeLeft % 60;
 
-    document.getElementById("timer").textContent =
+    timer.textContent =
         String(minutes).padStart(2, "0") +
         ":" +
         String(seconds).padStart(2, "0");
 }
 
+
 function startTimer() {
-    if (timerInterval !== null) {
+    if (timerRunning) {
         return;
     }
+
+    timerRunning = true;
 
     timerInterval = setInterval(function() {
         if (timeLeft <= 0) {
             clearInterval(timerInterval);
-            timerInterval = null;
+            timerRunning = false;
 
             alert("Study session complete! 🎉");
             return;
         }
 
         timeLeft--;
-
-        updateTimer();
+        showTimer();
     }, 1000);
 }
 
+
 function pauseTimer() {
     clearInterval(timerInterval);
-    timerInterval = null;
+    timerRunning = false;
 }
 
+
 function resetTimer() {
-    pauseTimer();
+    clearInterval(timerInterval);
 
     timeLeft = 25 * 60;
+    timerRunning = false;
 
-    updateTimer();
+    showTimer();
 }
