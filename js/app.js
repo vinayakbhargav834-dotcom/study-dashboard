@@ -1,7 +1,7 @@
-document.addEventListener("DOMContentLoaded", function () {
-    displaySubjects();
-    renderTodos();
-    renderExams();
-    updateTimer();
+document.addEventListener("DOMContentLoaded", function() {
+    showSubjects();
+    showTodos();
+    showExams();
+    showTimer();
     updateStats();
 });
